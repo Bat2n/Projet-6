@@ -1,0 +1,318 @@
+#contact_modal {
+    display: none;
+    position: fixed;               /* ⬅️ c'est le plus important */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  /* fond assombri */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#photographer-header {
+    display: flex;
+  justify-content: space-between;  /* espace entre les 3 blocs */
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto; /* centre horizontalement */
+  flex-wrap: wrap; 
+  background-color: #fafafa;
+
+}
+
+#photographer-header img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.photograph-info {
+    display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#daily-price {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #DB8876;
+  color: #000;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+       border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+#close-contact-modal {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#close-contact-modal:focus {
+  outline: none;
+}
+
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+form textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Galerie en 3 colonnes */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    
+}
+
+/* Chaque media */
+.gallery article {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image ou vidéo */
+.gallery img,
+.gallery video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Texte sous le média */
+.media-info {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.media-info h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.media-info p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: row;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-content {
+  text-align: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-title {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 30px;
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* padding horizontal pour pas coller au bord */
+  box-sizing: border-box;
+}
+
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #901C1C;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.like-button.liked {
+  color: #D3573C; /* couleur "liké" */
+  transform: scale(1.3);
+}
+
+.like-button i {
+  pointer-events: none; /* permet de cliquer sur le bouton même si on clique sur l'icône */
+}
+
+#sort-container {
+    max-width: 1200px;
+    margin: 20px auto;  
+    padding: 0 20px;    
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 10px;
+}
+
+
+#sort-select {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+select {
+  background-color: #901C1C;
+  color: white; 
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+

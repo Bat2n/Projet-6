@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Fisheye - photographe </title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" aria-label="Retourner sur la page d'accueil">
+      <img src="assets/images/logo.png" class="logo" />
+      </a>
+    </header>
+    <main id="main">
+      <section id="photographer-header">
+        <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
+      </section>
+
+    <div id="sort-container">
+      <label for="sort-select">Trier par </label>
+        <select id="sort-select" aria-label="Trier les médias">
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+        </select>
+    </div>
+
+
+      <section id="media-gallery" class="gallery">
+      
+      </section>
+    </main>
+<div id="contact_modal" role="dialog" aria-modal="true" aria-labelledby="contact_modal_title" aria-hidden="true" style="display: none;">
+  <div class="modal">
+    <header>
+      <h2 id="contact_modal_title">Contactez-moi</h2>
+      <button 
+        id="close-contact-modal" 
+        aria-label="Fermer la fenêtre de contact" 
+         
+        >
+        <img src="assets/icons/close.svg" alt="Fermer" style="width:24px; height:24px;" />
+      </button>
+    </header>
+    <form id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" name="firstName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" id="lastName" name="lastName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="contact_button">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" aria-label="Fermer la lightbox">&times;</button>
+      <button class="lightbox-prev" aria-label="Image précédente">&#10094;</button>
+    <div class="lightbox-content">
+      <div id="lightbox-media-container"></div>
+        <p id="lightbox-title" class="lightbox-title"></p>
+    </div>
+      <button class="lightbox-next" aria-label="Image suivante">&#10095;</button>
+    </div>
+
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="scripts/templates/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+  </body>
+</html>
