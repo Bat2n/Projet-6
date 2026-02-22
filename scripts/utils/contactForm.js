@@ -29,26 +29,24 @@ function handleFormSubmit(event) {
     alert("Message envoyé !");
     closeModal();
 
-    // Optionnel : reset du formulaire après soumission
     document.getElementById("contact-form").reset();
 }
 
-// Ferme la modale avec la touche Escape
+
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
         closeModal();
     }
 });
 
-// Ajout des écouteurs une fois le DOM chargé
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Bouton fermeture modale
+    
     const closeBtn = document.getElementById("close-contact-modal");
     if (closeBtn) {
         closeBtn.addEventListener("click", closeModal);
     }
-
-    // Soumission du formulaire
+    
     const form = document.getElementById("contact-form");
     if (form) {
         form.addEventListener("submit", handleFormSubmit);
